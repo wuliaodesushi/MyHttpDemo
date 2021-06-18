@@ -61,12 +61,12 @@ public class HttpServer {
                 PrintWriter pw = new PrintWriter(socket.getOutputStream());
                 Date date=new Date();
                 long time = date.getTime();
-                String s = String.valueOf(time);
+                String responseTime = String.valueOf(time);
                 pw.println("HTTP/1.1 200 OK");
                 pw.println("Content-type:text/html");
                 pw.println();
-                System.out.println(s);
-                pw.println(s);
+                System.out.println(responseTime);
+                pw.println(responseTime);
                 pw.flush();
                 socket.close();
             }

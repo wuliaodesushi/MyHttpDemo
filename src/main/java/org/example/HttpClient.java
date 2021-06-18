@@ -26,9 +26,9 @@ public class HttpClient {
                 try {
                     Date date = new Date();
                     long startTime = date.getTime();
-                    String s = String.valueOf(startTime);
-                    String string=HttpClientUtils.postParameters("http://localhost:8888",s);
-                    long endTime = Long.parseLong(string.trim());
+                    String startTimeString = String.valueOf(startTime);
+                    String responseTimeString=HttpClientUtils.postParameters("http://localhost:8888",startTimeString);
+                    long endTime = Long.parseLong(responseTimeString.trim());
                     if((endTime-startTime)<(threadID*1000)){
                         String result="第"+threadID+"个请求在规定的时间响应成功";
                         System.out.println(result);
